@@ -47,7 +47,7 @@ class MemberRepositoryV1Test {
         //  findMember와 member는 다른 인스턴스이다. 그럼에도 true가 나오는 이유는
         //  @Data 어노테이션이 EqualsAndHashCode를 자동으로 만들어주기 때문이다.
 
-        //update: money: 10000 -> 2000
+        //update: money: 10000 -> 20000
         repository.update(member.getMemberId(), 20000);
         Member updatedMember = repository.findById(member.getMemberId());
         assertThat(updatedMember.getMoney()).isEqualTo(20000);

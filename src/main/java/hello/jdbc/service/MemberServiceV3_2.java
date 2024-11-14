@@ -53,18 +53,4 @@ public class MemberServiceV3_2 {
             throw new IllegalStateException("이체중 예외 발생");
         }
     }
-
-    private static void release(Connection con) {
-        if (con != null) {
-            try {
-                // NOTE : default가 자동 커밋이기 때문에 위의 코드에서 false로 변경 한 것이
-                //  의도치 않게 에러가 발생할 수 있음. 그렇기에 다시 true로 변경
-                con.setAutoCommit(true);
-                con.close();
-            } catch (Exception e) {
-                log.info("error", e);
-            }
-        }
-    }
-
 }
